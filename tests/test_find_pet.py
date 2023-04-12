@@ -2,7 +2,7 @@ from lib.my_requests import MyRequests
 from lib.base_case import BaseCase
 from lib.assertion import Assertion
 
-class TestReturnPet(BaseCase):
+class TestFindPet(BaseCase):
     def setup_method(self):
         self.petId = 5
         response = MyRequests.get(f'/pet/{self.petId}')
