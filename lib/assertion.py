@@ -22,3 +22,12 @@ class Assertion:
         except json.JSONDecodeError:
             assert False, f'Ответ не в JSON. Ответ текста: "{response.text}"'
         assert name not in response_as_dict, f'Ответ JSON не должен содержать {name}. Но он присутствует'
+
+    @staticmethod
+    def assert_json_value_by_name(response: Response, name, expected_value, error_message):
+        try:
+            response_as_dict = response.json()
+        except json.JSONDecodeError:
+            assert False, f'Ответ не в JSON. Ответ текста: "{response.text}"'
+        assert name in response_as_dict, f'Ответ JSON не имеет ключа: "{name}"'
+        assert response_as_dict[name] == expected_value, error_message
