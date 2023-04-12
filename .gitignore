@@ -1,4 +1,3 @@
 .idea
 .pytest_cache
-lib/__pycache__
-tests/__pycache__
+__pycache__/
