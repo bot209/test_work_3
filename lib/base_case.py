@@ -1,7 +1,9 @@
 from requests import Response
 import json.decoder
+import allure
 
 class BaseCase:
+    @allure.step('Получение JSON значения')    
     def get_json(self, response: Response, name):
         try:
             response_as_dict = response.json()
