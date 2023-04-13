@@ -25,7 +25,7 @@
     
 Для тестов с POST запросом:
 
-    python -m pytest -s -v -m GET_methods
+    python -m pytest -s -v -m POST_methods
     
 #### 7. Запустить тесты с отчетом allure:
 
